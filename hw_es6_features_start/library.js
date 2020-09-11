@@ -1,11 +1,24 @@
 class Library {
-  books;
-  constructor() {
+  constructor(books = 0) {
   this.books = [];
   }
 
   bookCount() {
     return this.books.length;
+  }
+
+  addBook(book) {
+    this.books.push(book);
+  }
+
+  addBooks(newBooks) {
+    newBooks.forEach(book => this.books.push(book));
+  }
+
+  printInventory() {
+    this.books.forEach((book) => {
+      console.log(`${book.title} by ${book.author}`);
+    });
   }
 };
 
@@ -13,18 +26,18 @@ class Library {
 //   return this.books.length;
 // };
 
-Library.prototype.addBook = function (newBook) {
-  this.books.push(newBook);
-};
+// Library.prototype.addBook = function (newBook) {
+//   this.books.push(newBook);
+// };
 
-Library.prototype.addBooks = function (newBooks) {
-  newBooks.forEach(book => this.books.push(book));
-};
+// Library.prototype.addBooks = function (newBooks) {
+//   newBooks.forEach(book => this.books.push(book));
+// };
 
-Library.prototype.printInventory = function () {
-  this.books.forEach((book) => {
-    console.log(`${book.title} by ${book.author}`);
-  });
-};
+// Library.prototype.printInventory = function () {
+//   this.books.forEach((book) => {
+//     console.log(`${book.title} by ${book.author}`);
+//   });
+// };
 
 module.exports = Library;
