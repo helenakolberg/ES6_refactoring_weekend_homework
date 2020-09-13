@@ -40,4 +40,11 @@ describe('Library', function () {
     library.addBooks(books);
     assert.strictEqual(library.bookCount(), 3);
   });
+
+  it('should be able to print inventory', function() {
+    const books = [new Book('J R R Tolkien', 'The Fellowship of the Ring', 'Fantasy')];
+    const libraryWithBooks = new Library(books);
+    library.printInventory();
+    assert.strictEqual("The Fellowship of the Ring by J R R Tolkien", `${books[0].title} by ${books[0].author}`);
+  })
 });

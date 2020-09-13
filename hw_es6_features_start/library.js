@@ -17,7 +17,8 @@ export default class Library {
 
   printInventory() {
     this.books.forEach((book) => {
-      console.log(`${book.title} by ${book.author}`);
+      let {author, title, genre} = book;
+      console.log(`${title} by ${author}`);
     });
   }
 };
